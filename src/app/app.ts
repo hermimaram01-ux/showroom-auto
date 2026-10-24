@@ -173,10 +173,10 @@ export class App {
       description:"The Alfa Romeo Giulia is a premium sports sedan renowned for its elegant design, dynamic performance, and advanced technology. It is available with a range of engines, including a 280-horsepower turbocharged gasoline engine and 160- or 210-horsepower diesel options. The Giulia features a customizable 12.3-inch digital instrument cluster, an 8.8-inch touchscreen with navigation, and advanced driver assistance systems."
     }];
 
-    selectedCar: Auto | null = null; // the car shown in the detail page
-  favorites: Auto[] = [];          // the cars with a heart
+    selectedCar: Auto | null = null; 
+  favorites: Auto[] = [];          
 
-  // called when search-bar sends a car (click on "see more")
+  
   selectCar(auto: Auto) {
     this.selectedCar = auto;
   }
@@ -185,12 +185,11 @@ export class App {
     this.selectedCar = null;
   }
 
-  // called when search-bar sends a car (click on the heart)
   toggleFavorite(auto: Auto) {
     if (this.favorites.includes(auto)) {
-      this.favorites = this.favorites.filter((a) => a !== auto); // remove it
+      this.favorites = this.favorites.filter((a) => a !== auto); 
     } else {
-      this.favorites = [...this.favorites, auto]; // add it
+      this.favorites = [...this.favorites, auto]; 
     }
   }
 

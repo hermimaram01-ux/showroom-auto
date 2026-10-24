@@ -1,19 +1,16 @@
-/* ===== Change the colors of the whole site here ===== */
 :root {
-  --main-color: #4f46e5;   /* indigo : header, buttons */
-  --second-color: #ec4899; /* pink   : labels, hearts */
-  --brand-color: #4f46e5;  /* color of a car (changed below for each brand) */
+  --main-color: #4f46e5;   
+  --second-color: #ec4899; 
+  --brand-color: #4f46e5;  
 }
 
-/* Each brand has its own color (used by the cards and by the detail page) */
-[data-brand='Mercedes Benz'] { --brand-color: #0891b2; } /* cyan */
-[data-brand='Jaguar']        { --brand-color: #7c3aed; } /* violet */
-[data-brand='Audi']          { --brand-color: #dc2626; } /* red */
-[data-brand='BMW']           { --brand-color: #2563eb; } /* blue */
-[data-brand='Land Rover']    { --brand-color: #16a34a; } /* green */
-[data-brand='Alfa Romeo']    { --brand-color: #ea580c; } /* orange */
+[data-brand='Mercedes Benz'] { --brand-color: #0891b2; } 
+[data-brand='Jaguar']        { --brand-color: #7c3aed; } 
+[data-brand='Audi']          { --brand-color: #dc2626; } 
+[data-brand='BMW']           { --brand-color: #2563eb; } 
+[data-brand='Land Rover']    { --brand-color: #16a34a; } 
+[data-brand='Alfa Romeo']    { --brand-color: #ea580c; } 
 
-/* padding and border are included in the width of every element */
 * {
   box-sizing: border-box;
 }
@@ -25,7 +22,6 @@ body {
   background-attachment: fixed;
 }
 
-/* small colored label with the brand name */
 .brand-tag {
   display: inline-block;
   padding: 2px 12px;

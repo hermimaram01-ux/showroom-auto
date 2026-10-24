@@ -1,4 +1,3 @@
-/* the detail page covers the whole screen */
 .detail-page {
   position: fixed;
   top: 0;
@@ -11,7 +10,6 @@
   border-top: 8px solid var(--brand-color);
 }
 
-/* the X button, top left */
 .close {
   position: fixed;
   top: 20px;
@@ -96,7 +94,6 @@ h2 {
   cursor: pointer;
 }
 
-/* phone: the photo goes above the text */
 @media (max-width: 700px) {
   .detail {
     grid-template-columns: 1fr;

@@ -12,32 +12,32 @@ import { Auto } from '../../interfaces/auto';
 export class SearchBar {
   faMagnifyingGlass = faMagnifyingGlass;
 
-  // data received from the parent (App)
+
   @Input() autos: Auto[] = [];
   @Input() favorites: Auto[] = [];
 
-  // events sent to the parent (App)
+ 
   @Output() onSelectCar = new EventEmitter<Auto>();
   @Output() onToggleFavorite = new EventEmitter<Auto>();
 
-  // what the user chose in the search area
+  
   searchText = '';
   sortBy = 'none';
   onlyFavorites = false;
 
-  // the list shown on the page: it is recalculated each time the user changes something
+  
   get selectedAutos(): Auto[] {
-    // 1) search by brand or model
+    
     let result = this.autos.filter((auto) =>
       (auto.brand + ' ' + auto.model).toLowerCase().includes(this.searchText.toLowerCase())
     );
 
-    // 2) keep only the favorites if the box is checked
+    
     if (this.onlyFavorites) {
       result = result.filter((auto) => this.favorites.includes(auto));
     }
 
-    // 3) sort by price
+  
     if (this.sortBy === 'low') {
       result.sort((a, b) => a.price - b.price);
     } else if (this.sortBy === 'high') {
