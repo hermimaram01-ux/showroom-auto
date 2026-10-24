@@ -1,0 +1,118 @@
+.search {
+  margin: 30px 30px 15px;
+  padding: 8px 18px;
+  width: 350px;
+  max-width: calc(100% - 60px); /* never wider than the screen */
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid var(--main-color);
+  border-radius: 25px;
+  background: white;
+}
+
+.search input {
+  all: unset;
+  font-weight: bold;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.search label {
+  color: var(--second-color);
+  font-weight: bold;
+}
+
+.search fa-icon {
+  color: var(--main-color);
+}
+
+.options {
+  margin: 0 30px;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  border-left: 5px solid var(--second-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.options select {
+  padding: 4px 8px;
+  border: 1px solid var(--main-color);
+  border-radius: 8px;
+  color: var(--main-color);
+}
+
+.options span {
+  margin-left: auto;
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 25px;
+}
+
+/* the color of the card comes from the brand (see styles.css) */
+.auto-card {
+  position: relative;
+  width: 270px;
+  padding: 10px;
+  background: white;
+  color: #222;
+  border-top: 6px solid var(--brand-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.auto-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.details h3 {
+  margin: 8px 0;
+}
+
+.details p {
+  margin: 0 0 8px;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--brand-color);
+}
+
+.heart {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  color: var(--second-color);
+  background: white;
+  cursor: pointer;
+}
+
+.see-more {
+  padding: 7px 16px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+  background: var(--brand-color);
+  cursor: pointer;
+}

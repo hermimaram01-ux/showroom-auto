@@ -1,0 +1,48 @@
+<app-head-bar [title]="title" [favoritesCount]="favorites.length"></app-head-bar>
+
+<app-search-bar
+  [autos]="autoList"
+  [favorites]="favorites"
+  (onSelectCar)="selectCar($event)"
+  (onToggleFavorite)="toggleFavorite($event)"
+></app-search-bar>
+
+<!-- Detail page: it covers the whole screen (the style="..." below puts it on the screen).
+     The X (top left) brings you back to the list. -->
+@if (selectedCar; as car) {
+  <div
+    class="detail-page"
+    [attr.data-brand]="car.brand"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: auto; z-index: 100; background: #eef2ff"
+  >
+    <button
+      class="close"
+      style="position: fixed; top: 20px; left: 20px; z-index: 101"
+      (click)="closeCar()"
+      aria-label="Back to the list"
+    >✕</button>
+
+    <div class="detail">
+      <div class="photo">
+        <img [src]="'images/' + car.photo" [alt]="car.model">
+      </div>
+
+      <div class="info">
+        <span class="brand-tag">{{ car.brand }}</span>
+        <h2>{{ car.model }}</h2>
+        <p class="price">{{ car.price }} DNT</p>
+
+        <div class="facts">
+          <span>⚡ Power : {{ car.power }}</span>
+          <span>📦 {{ car.availability }} units in stock</span>
+        </div>
+
+        <p class="description">{{ car.description }}</p>
+
+        <button class="fav-btn" (click)="toggleFavorite(car)">
+          {{ isFavorite(car) ? '♥ Remove from favorites' : '♡ Add to favorites' }}
+        </button>
+      </div>
+    </div>
+  </div>
+}

@@ -1,0 +1,18 @@
+.header {
+  padding: 25px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(120deg, var(--main-color), var(--second-color));
+}
+
+h1 {
+  margin: 0 0 8px;
+}
+
+p {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25);
+}

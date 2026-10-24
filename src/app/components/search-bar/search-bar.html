@@ -1,0 +1,49 @@
+<div class="search">
+  <label>Brand</label>
+  <input type="text" #brand placeholder="Search a brand or a model..." (input)="searchText = brand.value">
+  <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+</div>
+
+<div class="options">
+  <label>
+    Sort by price
+    <select #sort (change)="sortBy = sort.value">
+      <option value="none">Default</option>
+      <option value="low">Low to high</option>
+      <option value="high">High to low</option>
+    </select>
+  </label>
+
+  <label>
+    <input type="checkbox" #fav (change)="onlyFavorites = fav.checked">
+    Favorites only
+  </label>
+
+  <span>{{ selectedAutos.length }} car(s) found</span>
+</div>
+
+<div class="cards">
+  @for (auto of selectedAutos; track auto.id) {
+    <div class="auto-card" [attr.data-brand]="auto.brand">
+      <button class="heart" (click)="onToggleFavorite.emit(auto)">
+        {{ isFavorite(auto) ? '♥' : '♡' }}
+      </button>
+
+      <img [src]="'images/' + auto.photo" [alt]="auto.model">
+
+      <div class="details">
+        <span class="brand-tag">{{ auto.brand }}</span>
+        <h3>{{ auto.model }}</h3>
+        <p>
+          power : {{ auto.power }} <br>
+          only {{ auto.availability }} units in stock
+        </p>
+        <p class="price">{{ auto.price }} DNT</p>
+      </div>
+
+      <button class="see-more" (click)="onSelectCar.emit(auto)">see more...</button>
+    </div>
+  } @empty {
+    <p>No car found.</p>
+  }
+</div>
